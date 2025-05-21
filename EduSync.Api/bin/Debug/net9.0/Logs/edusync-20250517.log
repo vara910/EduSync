@@ -1,0 +1,701 @@
+2025-05-17 08:18:34.149 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-05-17 08:18:34.238 +05:30 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-05-17 08:18:34.312 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-05-17 08:18:34.336 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-05-17 08:18:34.346 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-05-17 08:18:34.369 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-05-17 08:18:34.416 +05:30 [ERR] Failed executing DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [UserId] uniqueidentifier NOT NULL,
+    [Name] nvarchar(100) NOT NULL,
+    [Email] nvarchar(100) NOT NULL,
+    [Role] nvarchar(20) NOT NULL,
+    [PasswordHash] nvarchar(max) NOT NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [LastLogin] datetime2 NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([UserId])
+);
+2025-05-17 08:19:17.913 +05:30 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-05-17 08:19:18.076 +05:30 [INF] Executed DbCommand (37ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-05-17 08:19:18.126 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-05-17 08:19:30.428 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-05-17 08:19:30.488 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-05-17 08:19:30.507 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-05-17 08:20:30.401 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-05-17 08:20:30.504 +05:30 [INF] Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-05-17 08:20:30.586 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-05-17 08:20:30.601 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-05-17 08:20:30.611 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-05-17 08:20:30.628 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-05-17 08:20:30.694 +05:30 [ERR] Failed executing DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [UserId] uniqueidentifier NOT NULL,
+    [Name] nvarchar(100) NOT NULL,
+    [Email] nvarchar(100) NOT NULL,
+    [Role] nvarchar(20) NOT NULL,
+    [PasswordHash] nvarchar(max) NOT NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [LastLogin] datetime2 NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([UserId])
+);
+2025-05-17 08:21:11.365 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-05-17 08:21:11.462 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [EduSyncDb] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+END;
+2025-05-17 08:21:11.506 +05:30 [INF] Executed DbCommand (42ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+DROP DATABASE [EduSyncDb];
+2025-05-17 08:21:24.755 +05:30 [INF] Executed DbCommand (232ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [EduSyncDb];
+2025-05-17 08:21:24.919 +05:30 [INF] Executed DbCommand (87ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [EduSyncDb] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2025-05-17 08:21:24.956 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-05-17 08:21:25.001 +05:30 [INF] Executed DbCommand (37ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-05-17 08:21:25.109 +05:30 [INF] Executed DbCommand (31ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-05-17 08:21:25.125 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-05-17 08:21:25.135 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-05-17 08:21:25.150 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-05-17 08:21:25.203 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [UserId] uniqueidentifier NOT NULL,
+    [Name] nvarchar(100) NOT NULL,
+    [Email] nvarchar(100) NOT NULL,
+    [Role] nvarchar(20) NOT NULL,
+    [PasswordHash] nvarchar(max) NOT NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [LastLogin] datetime2 NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([UserId])
+);
+2025-05-17 08:21:25.221 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Courses] (
+    [CourseId] uniqueidentifier NOT NULL,
+    [Title] nvarchar(200) NOT NULL,
+    [Description] nvarchar(1000) NOT NULL,
+    [InstructorId] uniqueidentifier NOT NULL,
+    [MediaUrl] nvarchar(max) NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [UpdatedAt] datetime2 NULL,
+    CONSTRAINT [PK_Courses] PRIMARY KEY ([CourseId]),
+    CONSTRAINT [FK_Courses_Users_InstructorId] FOREIGN KEY ([InstructorId]) REFERENCES [Users] ([UserId]) ON DELETE NO ACTION
+);
+2025-05-17 08:21:25.234 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Assessments] (
+    [AssessmentId] uniqueidentifier NOT NULL,
+    [CourseId] uniqueidentifier NOT NULL,
+    [Title] nvarchar(200) NOT NULL,
+    [Questions] nvarchar(max) NOT NULL,
+    [MaxScore] int NOT NULL,
+    [TimeLimit] time NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [UpdatedAt] datetime2 NULL,
+    CONSTRAINT [PK_Assessments] PRIMARY KEY ([AssessmentId]),
+    CONSTRAINT [FK_Assessments_Courses_CourseId] FOREIGN KEY ([CourseId]) REFERENCES [Courses] ([CourseId]) ON DELETE CASCADE
+);
+2025-05-17 08:21:25.247 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Enrollments] (
+    [StudentId] uniqueidentifier NOT NULL,
+    [CourseId] uniqueidentifier NOT NULL,
+    [EnrollmentDate] datetime2 NOT NULL,
+    [Status] nvarchar(50) NOT NULL,
+    [LastAccessDate] datetime2 NULL,
+    [CompletionDate] datetime2 NULL,
+    [Progress] int NOT NULL,
+    [Notes] nvarchar(500) NOT NULL,
+    CONSTRAINT [PK_Enrollments] PRIMARY KEY ([StudentId], [CourseId]),
+    CONSTRAINT [FK_Enrollments_Courses_CourseId] FOREIGN KEY ([CourseId]) REFERENCES [Courses] ([CourseId]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Enrollments_Users_StudentId] FOREIGN KEY ([StudentId]) REFERENCES [Users] ([UserId]) ON DELETE NO ACTION
+);
+2025-05-17 08:21:25.259 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Results] (
+    [ResultId] uniqueidentifier NOT NULL,
+    [AssessmentId] uniqueidentifier NOT NULL,
+    [UserId] uniqueidentifier NOT NULL,
+    [Score] int NOT NULL,
+    [AttemptDate] datetime2 NOT NULL,
+    [Answers] nvarchar(max) NOT NULL,
+    [TimeTaken] time NULL,
+    CONSTRAINT [PK_Results] PRIMARY KEY ([ResultId]),
+    CONSTRAINT [FK_Results_Assessments_AssessmentId] FOREIGN KEY ([AssessmentId]) REFERENCES [Assessments] ([AssessmentId]) ON DELETE NO ACTION,
+    CONSTRAINT [FK_Results_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Users] ([UserId]) ON DELETE NO ACTION
+);
+2025-05-17 08:21:25.271 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Assessments_CourseId] ON [Assessments] ([CourseId]);
+2025-05-17 08:21:25.280 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Courses_InstructorId] ON [Courses] ([InstructorId]);
+2025-05-17 08:21:25.291 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Enrollments_CourseId] ON [Enrollments] ([CourseId]);
+2025-05-17 08:21:25.300 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Enrollments_EnrollmentDate] ON [Enrollments] ([EnrollmentDate]);
+2025-05-17 08:21:25.308 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Results_AssessmentId] ON [Results] ([AssessmentId]);
+2025-05-17 08:21:25.320 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Results_UserId] ON [Results] ([UserId]);
+2025-05-17 08:21:25.330 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_Users_Email] ON [Users] ([Email]);
+2025-05-17 08:21:25.354 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250517025015_InitialCreate', N'9.0.5');
+2025-05-17 08:21:25.375 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-05-17 08:21:56.952 +05:30 [INF] Applying database migrations...
+2025-05-17 08:21:58.147 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-05-17 08:21:58.208 +05:30 [INF] Executed DbCommand (37ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-05-17 08:21:58.337 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-05-17 08:21:58.354 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-05-17 08:21:58.358 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-05-17 08:21:58.376 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-05-17 08:21:58.408 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-05-17 08:21:58.416 +05:30 [INF] Database migrations applied successfully
+2025-05-17 08:33:57.903 +05:30 [INF] Applying database migrations...
+2025-05-17 08:34:00.214 +05:30 [INF] Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-05-17 08:34:00.304 +05:30 [INF] Executed DbCommand (57ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-05-17 08:34:00.411 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-05-17 08:34:00.442 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-05-17 08:34:00.454 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-05-17 08:34:00.477 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-05-17 08:34:00.503 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-05-17 08:34:00.516 +05:30 [INF] Database migrations applied successfully
+2025-05-17 08:42:34.544 +05:30 [INF] Applying database migrations...
+2025-05-17 08:42:35.739 +05:30 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-05-17 08:42:35.824 +05:30 [INF] Executed DbCommand (55ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-05-17 08:42:35.912 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-05-17 08:42:35.942 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-05-17 08:42:35.971 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-05-17 08:42:36.014 +05:30 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-05-17 08:42:36.061 +05:30 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-05-17 08:42:36.071 +05:30 [INF] Database migrations applied successfully
+2025-05-17 08:43:06.093 +05:30 [INF] Executed DbCommand (57ms) [Parameters=[@__registerDto_Email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[CreatedAt], [u].[Email], [u].[LastLogin], [u].[Name], [u].[PasswordHash], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__registerDto_Email_0
+2025-05-17 08:43:07.050 +05:30 [INF] Executed DbCommand (45ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 100), @p3='?' (DbType = DateTime2), @p4='?' (Size = 100), @p5='?' (Size = 4000), @p6='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([UserId], [CreatedAt], [Email], [LastLogin], [Name], [PasswordHash], [Role])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2025-05-17 08:43:53.821 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@__registerDto_Email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[CreatedAt], [u].[Email], [u].[LastLogin], [u].[Name], [u].[PasswordHash], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__registerDto_Email_0
+2025-05-17 08:43:54.505 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 100), @p3='?' (DbType = DateTime2), @p4='?' (Size = 100), @p5='?' (Size = 4000), @p6='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([UserId], [CreatedAt], [Email], [LastLogin], [Name], [PasswordHash], [Role])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2025-05-17 08:44:02.797 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[@__loginDto_Email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[CreatedAt], [u].[Email], [u].[LastLogin], [u].[Name], [u].[PasswordHash], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__loginDto_Email_0
+2025-05-17 08:44:03.736 +05:30 [INF] Executed DbCommand (42ms) [Parameters=[@p1='?' (DbType = Guid), @p0='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [LastLogin] = @p0
+OUTPUT 1
+WHERE [UserId] = @p1;
+2025-05-17 08:44:03.773 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: JWT key is not configured.
+   at EduSync.Api.Services.AuthService.GenerateJwtToken(String userId, String email, String role) in C:\Users\vara.DESKTOP-OIPRRSN\EduSync\EduSync.Api\Services\AuthService.cs:line 92
+   at EduSync.Api.Services.AuthService.LoginAsync(LoginRequestDto loginDto) in C:\Users\vara.DESKTOP-OIPRRSN\EduSync\EduSync.Api\Services\AuthService.cs:line 52
+   at EduSync.Api.Controllers.AuthController.Login(LoginRequestDto loginDto) in C:\Users\vara.DESKTOP-OIPRRSN\EduSync\EduSync.Api\Controllers\AuthController.cs:line 30
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-05-17 08:44:13.157 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@__loginDto_Email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[CreatedAt], [u].[Email], [u].[LastLogin], [u].[Name], [u].[PasswordHash], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__loginDto_Email_0
+2025-05-17 08:44:13.978 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[@p1='?' (DbType = Guid), @p0='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [LastLogin] = @p0
+OUTPUT 1
+WHERE [UserId] = @p1;
+2025-05-17 08:44:13.986 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: JWT key is not configured.
+   at EduSync.Api.Services.AuthService.GenerateJwtToken(String userId, String email, String role) in C:\Users\vara.DESKTOP-OIPRRSN\EduSync\EduSync.Api\Services\AuthService.cs:line 92
+   at EduSync.Api.Services.AuthService.LoginAsync(LoginRequestDto loginDto) in C:\Users\vara.DESKTOP-OIPRRSN\EduSync\EduSync.Api\Services\AuthService.cs:line 52
+   at EduSync.Api.Controllers.AuthController.Login(LoginRequestDto loginDto) in C:\Users\vara.DESKTOP-OIPRRSN\EduSync\EduSync.Api\Controllers\AuthController.cs:line 30
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-05-17 08:48:01.996 +05:30 [INF] Executed DbCommand (34ms) [Parameters=[@__loginDto_Email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[CreatedAt], [u].[Email], [u].[LastLogin], [u].[Name], [u].[PasswordHash], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__loginDto_Email_0
+2025-05-17 08:48:02.308 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[@p1='?' (DbType = Guid), @p0='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [LastLogin] = @p0
+OUTPUT 1
+WHERE [UserId] = @p1;
+2025-05-17 08:48:02.325 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: JWT key is not configured.
+   at EduSync.Api.Services.AuthService.GenerateJwtToken(String userId, String email, String role) in C:\Users\vara.DESKTOP-OIPRRSN\EduSync\EduSync.Api\Services\AuthService.cs:line 92
+   at EduSync.Api.Services.AuthService.LoginAsync(LoginRequestDto loginDto) in C:\Users\vara.DESKTOP-OIPRRSN\EduSync\EduSync.Api\Services\AuthService.cs:line 52
+   at EduSync.Api.Controllers.AuthController.Login(LoginRequestDto loginDto) in C:\Users\vara.DESKTOP-OIPRRSN\EduSync\EduSync.Api\Controllers\AuthController.cs:line 30
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-05-17 08:50:45.479 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[@__loginDto_Email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[CreatedAt], [u].[Email], [u].[LastLogin], [u].[Name], [u].[PasswordHash], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__loginDto_Email_0
+2025-05-17 08:50:45.731 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@p1='?' (DbType = Guid), @p0='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [LastLogin] = @p0
+OUTPUT 1
+WHERE [UserId] = @p1;
+2025-05-17 08:50:45.737 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: JWT key is not configured.
+   at EduSync.Api.Services.AuthService.GenerateJwtToken(String userId, String email, String role) in C:\Users\vara.DESKTOP-OIPRRSN\EduSync\EduSync.Api\Services\AuthService.cs:line 92
+   at EduSync.Api.Services.AuthService.LoginAsync(LoginRequestDto loginDto) in C:\Users\vara.DESKTOP-OIPRRSN\EduSync\EduSync.Api\Services\AuthService.cs:line 52
+   at EduSync.Api.Controllers.AuthController.Login(LoginRequestDto loginDto) in C:\Users\vara.DESKTOP-OIPRRSN\EduSync\EduSync.Api\Controllers\AuthController.cs:line 30
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-05-17 08:51:06.654 +05:30 [INF] Applying database migrations...
+2025-05-17 08:51:07.533 +05:30 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-05-17 08:51:07.599 +05:30 [INF] Executed DbCommand (44ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-05-17 08:51:07.693 +05:30 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-05-17 08:51:07.710 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-05-17 08:51:07.717 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-05-17 08:51:07.730 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-05-17 08:51:07.751 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-05-17 08:51:07.757 +05:30 [INF] Database migrations applied successfully
+2025-05-17 08:51:31.146 +05:30 [INF] Executed DbCommand (53ms) [Parameters=[@__loginDto_Email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[CreatedAt], [u].[Email], [u].[LastLogin], [u].[Name], [u].[PasswordHash], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__loginDto_Email_0
+2025-05-17 08:51:32.040 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@p1='?' (DbType = Guid), @p0='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [LastLogin] = @p0
+OUTPUT 1
+WHERE [UserId] = @p1;
+2025-05-17 08:51:56.809 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__loginDto_Email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[CreatedAt], [u].[Email], [u].[LastLogin], [u].[Name], [u].[PasswordHash], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__loginDto_Email_0
+2025-05-17 08:51:57.098 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@p1='?' (DbType = Guid), @p0='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [LastLogin] = @p0
+OUTPUT 1
+WHERE [UserId] = @p1;
+2025-05-17 08:51:57.301 +05:30 [INF] Retrieving all courses
+2025-05-17 08:51:57.435 +05:30 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2025-05-17 08:51:57.546 +05:30 [INF] Executed DbCommand (50ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CourseId], [c].[CreatedAt], [c].[Description], [c].[InstructorId], [c].[MediaUrl], [c].[Title], [c].[UpdatedAt], [u].[UserId], [u].[CreatedAt], [u].[Email], [u].[LastLogin], [u].[Name], [u].[PasswordHash], [u].[Role], [e].[StudentId], [e].[CourseId], [e].[CompletionDate], [e].[EnrollmentDate], [e].[LastAccessDate], [e].[Notes], [e].[Progress], [e].[Status], [a].[AssessmentId], [a].[CourseId], [a].[CreatedAt], [a].[MaxScore], [a].[Questions], [a].[TimeLimit], [a].[Title], [a].[UpdatedAt]
+FROM [Courses] AS [c]
+INNER JOIN [Users] AS [u] ON [c].[InstructorId] = [u].[UserId]
+LEFT JOIN [Enrollments] AS [e] ON [c].[CourseId] = [e].[CourseId]
+LEFT JOIN [Assessments] AS [a] ON [c].[CourseId] = [a].[CourseId]
+ORDER BY [c].[CreatedAt] DESC, [c].[CourseId], [u].[UserId], [e].[StudentId], [e].[CourseId]
+2025-05-17 08:51:57.558 +05:30 [INF] Retrieved 0 courses
+2025-05-17 08:51:57.612 +05:30 [INF] Retrieving all courses
+2025-05-17 08:51:57.627 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CourseId], [c].[CreatedAt], [c].[Description], [c].[InstructorId], [c].[MediaUrl], [c].[Title], [c].[UpdatedAt], [u].[UserId], [u].[CreatedAt], [u].[Email], [u].[LastLogin], [u].[Name], [u].[PasswordHash], [u].[Role], [e].[StudentId], [e].[CourseId], [e].[CompletionDate], [e].[EnrollmentDate], [e].[LastAccessDate], [e].[Notes], [e].[Progress], [e].[Status], [a].[AssessmentId], [a].[CourseId], [a].[CreatedAt], [a].[MaxScore], [a].[Questions], [a].[TimeLimit], [a].[Title], [a].[UpdatedAt]
+FROM [Courses] AS [c]
+INNER JOIN [Users] AS [u] ON [c].[InstructorId] = [u].[UserId]
+LEFT JOIN [Enrollments] AS [e] ON [c].[CourseId] = [e].[CourseId]
+LEFT JOIN [Assessments] AS [a] ON [c].[CourseId] = [a].[CourseId]
+ORDER BY [c].[CreatedAt] DESC, [c].[CourseId], [u].[UserId], [e].[StudentId], [e].[CourseId]
+2025-05-17 08:51:57.634 +05:30 [INF] Retrieved 0 courses
+2025-05-17 08:52:02.297 +05:30 [INF] Retrieving all courses
+2025-05-17 08:52:02.320 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CourseId], [c].[CreatedAt], [c].[Description], [c].[InstructorId], [c].[MediaUrl], [c].[Title], [c].[UpdatedAt], [u].[UserId], [u].[CreatedAt], [u].[Email], [u].[LastLogin], [u].[Name], [u].[PasswordHash], [u].[Role], [e].[StudentId], [e].[CourseId], [e].[CompletionDate], [e].[EnrollmentDate], [e].[LastAccessDate], [e].[Notes], [e].[Progress], [e].[Status], [a].[AssessmentId], [a].[CourseId], [a].[CreatedAt], [a].[MaxScore], [a].[Questions], [a].[TimeLimit], [a].[Title], [a].[UpdatedAt]
+FROM [Courses] AS [c]
+INNER JOIN [Users] AS [u] ON [c].[InstructorId] = [u].[UserId]
+LEFT JOIN [Enrollments] AS [e] ON [c].[CourseId] = [e].[CourseId]
+LEFT JOIN [Assessments] AS [a] ON [c].[CourseId] = [a].[CourseId]
+ORDER BY [c].[CreatedAt] DESC, [c].[CourseId], [u].[UserId], [e].[StudentId], [e].[CourseId]
+2025-05-17 08:52:02.332 +05:30 [INF] Retrieved 0 courses
+2025-05-17 08:52:02.342 +05:30 [INF] Retrieving all courses
+2025-05-17 08:52:02.348 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CourseId], [c].[CreatedAt], [c].[Description], [c].[InstructorId], [c].[MediaUrl], [c].[Title], [c].[UpdatedAt], [u].[UserId], [u].[CreatedAt], [u].[Email], [u].[LastLogin], [u].[Name], [u].[PasswordHash], [u].[Role], [e].[StudentId], [e].[CourseId], [e].[CompletionDate], [e].[EnrollmentDate], [e].[LastAccessDate], [e].[Notes], [e].[Progress], [e].[Status], [a].[AssessmentId], [a].[CourseId], [a].[CreatedAt], [a].[MaxScore], [a].[Questions], [a].[TimeLimit], [a].[Title], [a].[UpdatedAt]
+FROM [Courses] AS [c]
+INNER JOIN [Users] AS [u] ON [c].[InstructorId] = [u].[UserId]
+LEFT JOIN [Enrollments] AS [e] ON [c].[CourseId] = [e].[CourseId]
+LEFT JOIN [Assessments] AS [a] ON [c].[CourseId] = [a].[CourseId]
+ORDER BY [c].[CreatedAt] DESC, [c].[CourseId], [u].[UserId], [e].[StudentId], [e].[CourseId]
+2025-05-17 08:52:02.352 +05:30 [INF] Retrieved 0 courses
+2025-05-17 08:52:03.824 +05:30 [INF] Retrieving all courses
+2025-05-17 08:52:03.844 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CourseId], [c].[CreatedAt], [c].[Description], [c].[InstructorId], [c].[MediaUrl], [c].[Title], [c].[UpdatedAt], [u].[UserId], [u].[CreatedAt], [u].[Email], [u].[LastLogin], [u].[Name], [u].[PasswordHash], [u].[Role], [e].[StudentId], [e].[CourseId], [e].[CompletionDate], [e].[EnrollmentDate], [e].[LastAccessDate], [e].[Notes], [e].[Progress], [e].[Status], [a].[AssessmentId], [a].[CourseId], [a].[CreatedAt], [a].[MaxScore], [a].[Questions], [a].[TimeLimit], [a].[Title], [a].[UpdatedAt]
+FROM [Courses] AS [c]
+INNER JOIN [Users] AS [u] ON [c].[InstructorId] = [u].[UserId]
+LEFT JOIN [Enrollments] AS [e] ON [c].[CourseId] = [e].[CourseId]
+LEFT JOIN [Assessments] AS [a] ON [c].[CourseId] = [a].[CourseId]
+ORDER BY [c].[CreatedAt] DESC, [c].[CourseId], [u].[UserId], [e].[StudentId], [e].[CourseId]
+2025-05-17 08:52:03.850 +05:30 [INF] Retrieved 0 courses
+2025-05-17 08:52:03.857 +05:30 [INF] Retrieving all courses
+2025-05-17 08:52:03.864 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CourseId], [c].[CreatedAt], [c].[Description], [c].[InstructorId], [c].[MediaUrl], [c].[Title], [c].[UpdatedAt], [u].[UserId], [u].[CreatedAt], [u].[Email], [u].[LastLogin], [u].[Name], [u].[PasswordHash], [u].[Role], [e].[StudentId], [e].[CourseId], [e].[CompletionDate], [e].[EnrollmentDate], [e].[LastAccessDate], [e].[Notes], [e].[Progress], [e].[Status], [a].[AssessmentId], [a].[CourseId], [a].[CreatedAt], [a].[MaxScore], [a].[Questions], [a].[TimeLimit], [a].[Title], [a].[UpdatedAt]
+FROM [Courses] AS [c]
+INNER JOIN [Users] AS [u] ON [c].[InstructorId] = [u].[UserId]
+LEFT JOIN [Enrollments] AS [e] ON [c].[CourseId] = [e].[CourseId]
+LEFT JOIN [Assessments] AS [a] ON [c].[CourseId] = [a].[CourseId]
+ORDER BY [c].[CreatedAt] DESC, [c].[CourseId], [u].[UserId], [e].[StudentId], [e].[CourseId]
+2025-05-17 08:52:03.869 +05:30 [INF] Retrieved 0 courses
+2025-05-17 08:52:04.564 +05:30 [INF] Retrieving all courses
+2025-05-17 08:52:04.588 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CourseId], [c].[CreatedAt], [c].[Description], [c].[InstructorId], [c].[MediaUrl], [c].[Title], [c].[UpdatedAt], [u].[UserId], [u].[CreatedAt], [u].[Email], [u].[LastLogin], [u].[Name], [u].[PasswordHash], [u].[Role], [e].[StudentId], [e].[CourseId], [e].[CompletionDate], [e].[EnrollmentDate], [e].[LastAccessDate], [e].[Notes], [e].[Progress], [e].[Status], [a].[AssessmentId], [a].[CourseId], [a].[CreatedAt], [a].[MaxScore], [a].[Questions], [a].[TimeLimit], [a].[Title], [a].[UpdatedAt]
+FROM [Courses] AS [c]
+INNER JOIN [Users] AS [u] ON [c].[InstructorId] = [u].[UserId]
+LEFT JOIN [Enrollments] AS [e] ON [c].[CourseId] = [e].[CourseId]
+LEFT JOIN [Assessments] AS [a] ON [c].[CourseId] = [a].[CourseId]
+ORDER BY [c].[CreatedAt] DESC, [c].[CourseId], [u].[UserId], [e].[StudentId], [e].[CourseId]
+2025-05-17 08:52:04.600 +05:30 [INF] Retrieved 0 courses
+2025-05-17 08:52:04.611 +05:30 [INF] Retrieving all courses
+2025-05-17 08:52:04.618 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CourseId], [c].[CreatedAt], [c].[Description], [c].[InstructorId], [c].[MediaUrl], [c].[Title], [c].[UpdatedAt], [u].[UserId], [u].[CreatedAt], [u].[Email], [u].[LastLogin], [u].[Name], [u].[PasswordHash], [u].[Role], [e].[StudentId], [e].[CourseId], [e].[CompletionDate], [e].[EnrollmentDate], [e].[LastAccessDate], [e].[Notes], [e].[Progress], [e].[Status], [a].[AssessmentId], [a].[CourseId], [a].[CreatedAt], [a].[MaxScore], [a].[Questions], [a].[TimeLimit], [a].[Title], [a].[UpdatedAt]
+FROM [Courses] AS [c]
+INNER JOIN [Users] AS [u] ON [c].[InstructorId] = [u].[UserId]
+LEFT JOIN [Enrollments] AS [e] ON [c].[CourseId] = [e].[CourseId]
+LEFT JOIN [Assessments] AS [a] ON [c].[CourseId] = [a].[CourseId]
+ORDER BY [c].[CreatedAt] DESC, [c].[CourseId], [u].[UserId], [e].[StudentId], [e].[CourseId]
+2025-05-17 08:52:04.624 +05:30 [INF] Retrieved 0 courses
+2025-05-17 08:52:07.800 +05:30 [INF] Retrieving all courses
+2025-05-17 08:52:07.833 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CourseId], [c].[CreatedAt], [c].[Description], [c].[InstructorId], [c].[MediaUrl], [c].[Title], [c].[UpdatedAt], [u].[UserId], [u].[CreatedAt], [u].[Email], [u].[LastLogin], [u].[Name], [u].[PasswordHash], [u].[Role], [e].[StudentId], [e].[CourseId], [e].[CompletionDate], [e].[EnrollmentDate], [e].[LastAccessDate], [e].[Notes], [e].[Progress], [e].[Status], [a].[AssessmentId], [a].[CourseId], [a].[CreatedAt], [a].[MaxScore], [a].[Questions], [a].[TimeLimit], [a].[Title], [a].[UpdatedAt]
+FROM [Courses] AS [c]
+INNER JOIN [Users] AS [u] ON [c].[InstructorId] = [u].[UserId]
+LEFT JOIN [Enrollments] AS [e] ON [c].[CourseId] = [e].[CourseId]
+LEFT JOIN [Assessments] AS [a] ON [c].[CourseId] = [a].[CourseId]
+ORDER BY [c].[CreatedAt] DESC, [c].[CourseId], [u].[UserId], [e].[StudentId], [e].[CourseId]
+2025-05-17 08:52:07.848 +05:30 [INF] Retrieved 0 courses
+2025-05-17 08:52:07.859 +05:30 [INF] Retrieving all courses
+2025-05-17 08:52:07.867 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CourseId], [c].[CreatedAt], [c].[Description], [c].[InstructorId], [c].[MediaUrl], [c].[Title], [c].[UpdatedAt], [u].[UserId], [u].[CreatedAt], [u].[Email], [u].[LastLogin], [u].[Name], [u].[PasswordHash], [u].[Role], [e].[StudentId], [e].[CourseId], [e].[CompletionDate], [e].[EnrollmentDate], [e].[LastAccessDate], [e].[Notes], [e].[Progress], [e].[Status], [a].[AssessmentId], [a].[CourseId], [a].[CreatedAt], [a].[MaxScore], [a].[Questions], [a].[TimeLimit], [a].[Title], [a].[UpdatedAt]
+FROM [Courses] AS [c]
+INNER JOIN [Users] AS [u] ON [c].[InstructorId] = [u].[UserId]
+LEFT JOIN [Enrollments] AS [e] ON [c].[CourseId] = [e].[CourseId]
+LEFT JOIN [Assessments] AS [a] ON [c].[CourseId] = [a].[CourseId]
+ORDER BY [c].[CreatedAt] DESC, [c].[CourseId], [u].[UserId], [e].[StudentId], [e].[CourseId]
+2025-05-17 08:52:07.878 +05:30 [INF] Retrieved 0 courses
+2025-05-17 08:52:56.336 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@__registerDto_Email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[CreatedAt], [u].[Email], [u].[LastLogin], [u].[Name], [u].[PasswordHash], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__registerDto_Email_0
+2025-05-17 08:52:56.746 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 100), @p3='?' (DbType = DateTime2), @p4='?' (Size = 100), @p5='?' (Size = 4000), @p6='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([UserId], [CreatedAt], [Email], [LastLogin], [Name], [PasswordHash], [Role])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2025-05-17 08:53:05.499 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@__loginDto_Email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[CreatedAt], [u].[Email], [u].[LastLogin], [u].[Name], [u].[PasswordHash], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__loginDto_Email_0
+2025-05-17 08:53:05.834 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@p1='?' (DbType = Guid), @p0='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [LastLogin] = @p0
+OUTPUT 1
+WHERE [UserId] = @p1;
+2025-05-17 08:53:05.891 +05:30 [INF] Retrieving all courses
+2025-05-17 08:53:05.913 +05:30 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CourseId], [c].[CreatedAt], [c].[Description], [c].[InstructorId], [c].[MediaUrl], [c].[Title], [c].[UpdatedAt], [u].[UserId], [u].[CreatedAt], [u].[Email], [u].[LastLogin], [u].[Name], [u].[PasswordHash], [u].[Role], [e].[StudentId], [e].[CourseId], [e].[CompletionDate], [e].[EnrollmentDate], [e].[LastAccessDate], [e].[Notes], [e].[Progress], [e].[Status], [a].[AssessmentId], [a].[CourseId], [a].[CreatedAt], [a].[MaxScore], [a].[Questions], [a].[TimeLimit], [a].[Title], [a].[UpdatedAt]
+FROM [Courses] AS [c]
+INNER JOIN [Users] AS [u] ON [c].[InstructorId] = [u].[UserId]
+LEFT JOIN [Enrollments] AS [e] ON [c].[CourseId] = [e].[CourseId]
+LEFT JOIN [Assessments] AS [a] ON [c].[CourseId] = [a].[CourseId]
+ORDER BY [c].[CreatedAt] DESC, [c].[CourseId], [u].[UserId], [e].[StudentId], [e].[CourseId]
+2025-05-17 08:53:05.920 +05:30 [INF] Retrieved 0 courses
+2025-05-17 08:53:05.927 +05:30 [INF] Retrieving all courses
+2025-05-17 08:53:05.935 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CourseId], [c].[CreatedAt], [c].[Description], [c].[InstructorId], [c].[MediaUrl], [c].[Title], [c].[UpdatedAt], [u].[UserId], [u].[CreatedAt], [u].[Email], [u].[LastLogin], [u].[Name], [u].[PasswordHash], [u].[Role], [e].[StudentId], [e].[CourseId], [e].[CompletionDate], [e].[EnrollmentDate], [e].[LastAccessDate], [e].[Notes], [e].[Progress], [e].[Status], [a].[AssessmentId], [a].[CourseId], [a].[CreatedAt], [a].[MaxScore], [a].[Questions], [a].[TimeLimit], [a].[Title], [a].[UpdatedAt]
+FROM [Courses] AS [c]
+INNER JOIN [Users] AS [u] ON [c].[InstructorId] = [u].[UserId]
+LEFT JOIN [Enrollments] AS [e] ON [c].[CourseId] = [e].[CourseId]
+LEFT JOIN [Assessments] AS [a] ON [c].[CourseId] = [a].[CourseId]
+ORDER BY [c].[CreatedAt] DESC, [c].[CourseId], [u].[UserId], [e].[StudentId], [e].[CourseId]
+2025-05-17 08:53:05.941 +05:30 [INF] Retrieved 0 courses
+2025-05-17 08:55:42.614 +05:30 [INF] Retrieving all courses
+2025-05-17 08:55:42.648 +05:30 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CourseId], [c].[CreatedAt], [c].[Description], [c].[InstructorId], [c].[MediaUrl], [c].[Title], [c].[UpdatedAt], [u].[UserId], [u].[CreatedAt], [u].[Email], [u].[LastLogin], [u].[Name], [u].[PasswordHash], [u].[Role], [e].[StudentId], [e].[CourseId], [e].[CompletionDate], [e].[EnrollmentDate], [e].[LastAccessDate], [e].[Notes], [e].[Progress], [e].[Status], [a].[AssessmentId], [a].[CourseId], [a].[CreatedAt], [a].[MaxScore], [a].[Questions], [a].[TimeLimit], [a].[Title], [a].[UpdatedAt]
+FROM [Courses] AS [c]
+INNER JOIN [Users] AS [u] ON [c].[InstructorId] = [u].[UserId]
+LEFT JOIN [Enrollments] AS [e] ON [c].[CourseId] = [e].[CourseId]
+LEFT JOIN [Assessments] AS [a] ON [c].[CourseId] = [a].[CourseId]
+ORDER BY [c].[CreatedAt] DESC, [c].[CourseId], [u].[UserId], [e].[StudentId], [e].[CourseId]
+2025-05-17 08:55:42.676 +05:30 [INF] Retrieved 0 courses
+2025-05-17 08:55:42.688 +05:30 [INF] Retrieving all courses
+2025-05-17 08:55:42.710 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CourseId], [c].[CreatedAt], [c].[Description], [c].[InstructorId], [c].[MediaUrl], [c].[Title], [c].[UpdatedAt], [u].[UserId], [u].[CreatedAt], [u].[Email], [u].[LastLogin], [u].[Name], [u].[PasswordHash], [u].[Role], [e].[StudentId], [e].[CourseId], [e].[CompletionDate], [e].[EnrollmentDate], [e].[LastAccessDate], [e].[Notes], [e].[Progress], [e].[Status], [a].[AssessmentId], [a].[CourseId], [a].[CreatedAt], [a].[MaxScore], [a].[Questions], [a].[TimeLimit], [a].[Title], [a].[UpdatedAt]
+FROM [Courses] AS [c]
+INNER JOIN [Users] AS [u] ON [c].[InstructorId] = [u].[UserId]
+LEFT JOIN [Enrollments] AS [e] ON [c].[CourseId] = [e].[CourseId]
+LEFT JOIN [Assessments] AS [a] ON [c].[CourseId] = [a].[CourseId]
+ORDER BY [c].[CreatedAt] DESC, [c].[CourseId], [u].[UserId], [e].[StudentId], [e].[CourseId]
+2025-05-17 08:55:42.718 +05:30 [INF] Retrieved 0 courses
+2025-05-17 08:56:39.658 +05:30 [INF] Retrieving all courses
+2025-05-17 08:56:39.802 +05:30 [INF] Executed DbCommand (85ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CourseId], [c].[CreatedAt], [c].[Description], [c].[InstructorId], [c].[MediaUrl], [c].[Title], [c].[UpdatedAt], [u].[UserId], [u].[CreatedAt], [u].[Email], [u].[LastLogin], [u].[Name], [u].[PasswordHash], [u].[Role], [e].[StudentId], [e].[CourseId], [e].[CompletionDate], [e].[EnrollmentDate], [e].[LastAccessDate], [e].[Notes], [e].[Progress], [e].[Status], [a].[AssessmentId], [a].[CourseId], [a].[CreatedAt], [a].[MaxScore], [a].[Questions], [a].[TimeLimit], [a].[Title], [a].[UpdatedAt]
+FROM [Courses] AS [c]
+INNER JOIN [Users] AS [u] ON [c].[InstructorId] = [u].[UserId]
+LEFT JOIN [Enrollments] AS [e] ON [c].[CourseId] = [e].[CourseId]
+LEFT JOIN [Assessments] AS [a] ON [c].[CourseId] = [a].[CourseId]
+ORDER BY [c].[CreatedAt] DESC, [c].[CourseId], [u].[UserId], [e].[StudentId], [e].[CourseId]
+2025-05-17 08:56:39.875 +05:30 [INF] Retrieved 0 courses
+2025-05-17 08:56:39.906 +05:30 [INF] Retrieving all courses
+2025-05-17 08:56:39.939 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CourseId], [c].[CreatedAt], [c].[Description], [c].[InstructorId], [c].[MediaUrl], [c].[Title], [c].[UpdatedAt], [u].[UserId], [u].[CreatedAt], [u].[Email], [u].[LastLogin], [u].[Name], [u].[PasswordHash], [u].[Role], [e].[StudentId], [e].[CourseId], [e].[CompletionDate], [e].[EnrollmentDate], [e].[LastAccessDate], [e].[Notes], [e].[Progress], [e].[Status], [a].[AssessmentId], [a].[CourseId], [a].[CreatedAt], [a].[MaxScore], [a].[Questions], [a].[TimeLimit], [a].[Title], [a].[UpdatedAt]
+FROM [Courses] AS [c]
+INNER JOIN [Users] AS [u] ON [c].[InstructorId] = [u].[UserId]
+LEFT JOIN [Enrollments] AS [e] ON [c].[CourseId] = [e].[CourseId]
+LEFT JOIN [Assessments] AS [a] ON [c].[CourseId] = [a].[CourseId]
+ORDER BY [c].[CreatedAt] DESC, [c].[CourseId], [u].[UserId], [e].[StudentId], [e].[CourseId]
+2025-05-17 08:56:41.042 +05:30 [INF] Retrieved 0 courses
+2025-05-17 08:58:15.774 +05:30 [INF] Retrieving all courses
+2025-05-17 08:58:15.908 +05:30 [INF] Executed DbCommand (127ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CourseId], [c].[CreatedAt], [c].[Description], [c].[InstructorId], [c].[MediaUrl], [c].[Title], [c].[UpdatedAt], [u].[UserId], [u].[CreatedAt], [u].[Email], [u].[LastLogin], [u].[Name], [u].[PasswordHash], [u].[Role], [e].[StudentId], [e].[CourseId], [e].[CompletionDate], [e].[EnrollmentDate], [e].[LastAccessDate], [e].[Notes], [e].[Progress], [e].[Status], [a].[AssessmentId], [a].[CourseId], [a].[CreatedAt], [a].[MaxScore], [a].[Questions], [a].[TimeLimit], [a].[Title], [a].[UpdatedAt]
+FROM [Courses] AS [c]
+INNER JOIN [Users] AS [u] ON [c].[InstructorId] = [u].[UserId]
+LEFT JOIN [Enrollments] AS [e] ON [c].[CourseId] = [e].[CourseId]
+LEFT JOIN [Assessments] AS [a] ON [c].[CourseId] = [a].[CourseId]
+ORDER BY [c].[CreatedAt] DESC, [c].[CourseId], [u].[UserId], [e].[StudentId], [e].[CourseId]
+2025-05-17 08:58:15.924 +05:30 [INF] Retrieved 0 courses
+2025-05-17 08:58:15.939 +05:30 [INF] Retrieving all courses
+2025-05-17 08:58:15.955 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CourseId], [c].[CreatedAt], [c].[Description], [c].[InstructorId], [c].[MediaUrl], [c].[Title], [c].[UpdatedAt], [u].[UserId], [u].[CreatedAt], [u].[Email], [u].[LastLogin], [u].[Name], [u].[PasswordHash], [u].[Role], [e].[StudentId], [e].[CourseId], [e].[CompletionDate], [e].[EnrollmentDate], [e].[LastAccessDate], [e].[Notes], [e].[Progress], [e].[Status], [a].[AssessmentId], [a].[CourseId], [a].[CreatedAt], [a].[MaxScore], [a].[Questions], [a].[TimeLimit], [a].[Title], [a].[UpdatedAt]
+FROM [Courses] AS [c]
+INNER JOIN [Users] AS [u] ON [c].[InstructorId] = [u].[UserId]
+LEFT JOIN [Enrollments] AS [e] ON [c].[CourseId] = [e].[CourseId]
+LEFT JOIN [Assessments] AS [a] ON [c].[CourseId] = [a].[CourseId]
+ORDER BY [c].[CreatedAt] DESC, [c].[CourseId], [u].[UserId], [e].[StudentId], [e].[CourseId]
+2025-05-17 08:58:15.967 +05:30 [INF] Retrieved 0 courses
+2025-05-17 10:09:20.228 +05:30 [INF] Executed DbCommand (18ms) [Parameters=[@__loginDto_Email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[CreatedAt], [u].[Email], [u].[LastLogin], [u].[Name], [u].[PasswordHash], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__loginDto_Email_0
+2025-05-17 10:09:51.202 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[@__registerDto_Email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[CreatedAt], [u].[Email], [u].[LastLogin], [u].[Name], [u].[PasswordHash], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__registerDto_Email_0
+2025-05-17 10:09:52.217 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 100), @p3='?' (DbType = DateTime2), @p4='?' (Size = 100), @p5='?' (Size = 4000), @p6='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([UserId], [CreatedAt], [Email], [LastLogin], [Name], [PasswordHash], [Role])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2025-05-17 10:10:02.763 +05:30 [INF] Executed DbCommand (16ms) [Parameters=[@__loginDto_Email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[CreatedAt], [u].[Email], [u].[LastLogin], [u].[Name], [u].[PasswordHash], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__loginDto_Email_0
+2025-05-17 10:10:04.050 +05:30 [INF] Executed DbCommand (27ms) [Parameters=[@p1='?' (DbType = Guid), @p0='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [LastLogin] = @p0
+OUTPUT 1
+WHERE [UserId] = @p1;
+2025-05-17 10:17:12.635 +05:30 [INF] Executed DbCommand (111ms) [Parameters=[@__registerDto_Email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[CreatedAt], [u].[Email], [u].[LastLogin], [u].[Name], [u].[PasswordHash], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__registerDto_Email_0
+2025-05-17 10:17:13.578 +05:30 [INF] Executed DbCommand (85ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 100), @p3='?' (DbType = DateTime2), @p4='?' (Size = 100), @p5='?' (Size = 4000), @p6='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([UserId], [CreatedAt], [Email], [LastLogin], [Name], [PasswordHash], [Role])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2025-05-17 10:17:26.517 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[@__loginDto_Email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[CreatedAt], [u].[Email], [u].[LastLogin], [u].[Name], [u].[PasswordHash], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__loginDto_Email_0
+2025-05-17 10:17:27.316 +05:30 [INF] Executed DbCommand (27ms) [Parameters=[@p1='?' (DbType = Guid), @p0='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [LastLogin] = @p0
+OUTPUT 1
+WHERE [UserId] = @p1;

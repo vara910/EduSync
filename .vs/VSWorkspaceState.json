@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\EduSync.Api",
+    "\\EduSync.Api\\bin",
+    "\\EduSync.Api\\Data",
+    "\\EduSync.Api\\DTOs",
+    "\\EduSync.Api\\Migrations",
+    "\\EduSync.Api\\Models",
+    "\\EduSync.Api\\obj",
+    "\\EduSync.Api\\Properties",
+    "\\EduSync.Api\\Services"
+  ],
+  "SelectedNode": "\\EduSync.Api\\Services\\AuthService.cs",
+  "PreviewInSolutionExplorer": true
+}

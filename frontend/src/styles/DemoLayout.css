@@ -1,0 +1,644 @@
+/* DemoLayout.css - Styles for the developer tools and demo pages */
+
+/*********************************************
+  1. LAYOUT & STRUCTURE
+**********************************************/
+
+/* Base Layout Structure */
+.demo-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.demo-layout main {
+  flex: 1;
+}
+
+/* Dev Mode Banner */
+.dev-mode-banner {
+  background-color: rgba(255, 193, 7, 0.2);
+  border-bottom: 1px solid rgba(255, 193, 7, 0.4);
+  padding: 0.25rem 0;
+  transition: background-color 0.3s ease;
+}
+
+.dev-mode-banner:hover {
+  background-color: rgba(255, 193, 7, 0.3);
+}
+
+/* Demo Header Styling */
+.demo-header {
+  background: linear-gradient(135deg, var(--primary-color) 0%, #0056d6 100%);
+  color: white;
+  padding: 1.5rem 0;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  z-index: 10;
+}
+
+/* Theme toggle in header */
+.demo-header .theme-toggle {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.demo-header .theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/*********************************************
+  2. NAVIGATION & SIDEBAR
+**********************************************/
+
+/* Navigation Sidebar */
+.demo-nav {
+  position: sticky;
+  top: 1rem;
+}
+
+.demo-nav .card-header {
+  background-color: var(--bg-light);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem;
+}
+
+.demo-nav .list-group-item {
+  background-color: var(--bg-light);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+  padding: 0.75rem 1rem;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.demo-nav .list-group-item:hover:not(.disabled) {
+  background-color: var(--bg-secondary);
+  border-left-color: var(--primary-color);
+}
+
+.demo-nav .list-group-item.active {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+  border-left-width: 3px;
+}
+
+.demo-nav .list-group-item.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.demo-nav .list-group-item i {
+  width: 20px;
+  text-align: center;
+}
+
+/*********************************************
+  3. CARDS & PANELS
+**********************************************/
+
+/* Environment Info Panel */
+.env-info {
+  background-color: var(--bg-light);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.env-info:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-color);
+}
+
+.env-info .badge {
+  font-family: var(--font-family-monospace);
+  font-size: 0.75rem;
+}
+
+/* Breadcrumb Styling */
+.breadcrumb {
+  background-color: var(--bg-light);
+  padding: 0.75rem 1rem;
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--border-color);
+  margin-bottom: 1rem;
+}
+
+.breadcrumb-item a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.breadcrumb-item.active {
+  color: var(--text-secondary);
+}
+
+/* Demo Card Container */
+.demo-card {
+  background-color: var(--bg-light);
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.demo-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+/* Demo Card Header */
+.demo-card-header {
+  background-color: var(--bg-light);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem;
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Demo Content Area */
+.demo-content {
+  padding: 1.5rem 0;
+}
+
+/* Demo Description */
+.demo-description {
+  background-color: var(--bg-secondary);
+  padding: 1rem;
+  border-radius: var(--border-radius-md);
+  border-left: 4px solid var(--primary-color);
+}
+
+/* Demo Actions Footer */
+.demo-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  padding-top: 1rem;
+}
+
+/*********************************************
+  4. CODE & EXAMPLES
+**********************************************/
+
+/* Demo Code Blocks */
+.demo-code {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  padding: 1rem;
+  font-family: var(--font-family-monospace);
+  font-size: 0.875rem;
+  overflow-x: auto;
+  tab-size: 2;
+  margin-bottom: 1rem;
+}
+
+/* Example Sections */
+.demo-example, .component-example {
+  border: 1px dashed var(--border-color);
+  border-radius: var(--border-radius-md);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  background-color: var(--bg-light);
+}
+
+.demo-example-title, .component-example-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  font-weight: var(--font-weight-medium);
+}
+  color: var(--text-secondary);
+}
+
+.demo-divider::before,
+.demo-divider::after {
+  content: '';
+  flex-grow: 1;
+  height: 1px;
+  background-color: var(--border-color);
+}
+
+.demo-divider::before {
+  margin-right: 1rem;
+}
+
+.demo-divider::after {
+  margin-left: 1rem;
+}
+
+/* Component Properties Panel */
+.demo-props {
+  background-color: var(--bg-secondary);
+  border-radius: var(--border-radius-md);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.demo-props .form-label {
+  font-weight: var(--font-weight-medium);
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Responsive Design */
+@media (max-width: 991.98px) {
+  /* Mobile-friendly navigation */
+  .demo-nav {
+    position: static;
+    margin-bottom: 1.5rem;
+  }
+  
+  .demo-header {
+    padding: 1rem 0;
+  }
+  
+  .demo-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .demo-header p {
+    font-size: 0.875rem;
+  }
+  
+  /* Responsive spacing */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .demo-content {
+    padding: 1rem 0;
+  }
+  
+  .demo-description {
+    padding: 0.75rem;
+  }
+  
+  /* Smaller card headers */
+  .demo-card-header {
+    padding: 0.75rem;
+  }
+  
+  /* Smaller fonts */
+  .demo-code {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  /* Further adjustments for smaller screens */
+  .demo-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  
+  .demo-actions .btn {
+    width: 100%;
+  }
+  
+  /* Stack breadcrumb vertically */
+  .breadcrumb {
+    flex-wrap: wrap;
+  }
+  
+  /* Touch-friendly controls */
+  .btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+  }
+  
+  .demo-nav .list-group-item {
+    padding: 0.625rem 0.75rem;
+  }
+  
+  /* More compact card footers */
+  .card-footer {
+    padding: 0.75rem;
+  }
+}
+
+/* Dark Mode Overrides */
+[data-theme="dark"] .demo-header {
+  background: linear-gradient(135deg, #2b4b80 0%, #1a365d 100%);
+}
+
+[data-theme="dark"] .demo-description {
+  background-color: rgba(13, 110, 253, 0.1);
+}
+
+[data-theme="dark"] .breadcrumb {
+  background-color: var(--bg-light);
+}
+
+[data-theme="dark"] .demo-nav .list-group-item:hover:not(.disabled):not(.active) {
+  background-color: var(--bg-secondary);
+}
+
+[data-theme="dark"] .demo-nav .list-group-item.active {
+  background-color: var(--primary-color);
+}
+
+[data-theme="dark"] .demo-code {
+  background-color: #1a202c;
+  color: #e2e8f0;
+  border-color: #2d3748;
+}
+
+[data-theme="dark"] .dev-mode-banner {
+  background-color: rgba(255, 193, 7, 0.15);
+}
+
+/* Animation for Button Interactions */
+.btn {
+  transition: all 0.2s ease;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus states for accessibility */
+a:focus, button:focus, input:focus, select:focus, textarea:focus, [tabindex]:focus {
+  outline: 3px solid rgba(13, 110, 253, 0.25);
+  outline-offset: 2px;
+}
+
+/* DemoLayout.css - Styles for the developer tools and demo pages */
+
+/* Demo Layout Styles */
+.demo-layout {
+  background-color: var(--bg-tertiary, #f0f2f5);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.demo-layout main {
+  flex: 1;
+}
+
+/* Development Mode Banner */
+.dev-mode-banner {
+  background-color: rgba(255, 193, 7, 0.2);
+  border-bottom: 1px solid rgba(255, 193, 7, 0.5);
+  padding: 0.25rem 0;
+  transition: all 0.3s ease;
+}
+
+.dev-mode-banner:hover {
+  background-color: rgba(255, 193, 7, 0.3);
+}
+
+/* Demo Header */
+.demo-header {
+  background: linear-gradient(135deg, #2b2d42 0%, #3a3b52 100%);
+  color: var(--text-white, #ffffff);
+  padding: 1.5rem 0;
+  margin-bottom: 1.5rem;
+  transition: background 0.3s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Demo Navigation */
+.demo-nav .list-group-item {
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.demo-nav .list-group-item:hover:not(.disabled) {
+  background-color: var(--bg-secondary);
+  border-left-color: var(--primary-color);
+}
+
+.demo-nav .list-group-item.active {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+  border-left-width: 3px;
+}
+
+.demo-nav .list-group-item.disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Environment Info Panel */
+.env-info {
+  background-color: var(--bg-light);
+  border-radius: var(--border-radius-md);
+  padding: 1rem;
+  margin-top: 1rem;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.env-info:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.env-info .badge {
+  font-family: var(--font-family-monospace);
+  font-size: 0.75rem;
+}
+
+/* Demo Cards */
+.demo-card {
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-light);
+  height: 100%;
+}
+
+.demo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-color);
+}
+
+.demo-card-header {
+  background-color: var(--bg-secondary);
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  font-weight: var(--font-weight-semibold);
+}
+
+.demo-card-body {
+  padding: 1.5rem;
+}
+
+/* Code Blocks */
+.demo-code {
+  background-color: var(--bg-dark, #2d3748);
+  color: var(--text-light, #e2e8f0);
+  padding: 1rem;
+  border-radius: var(--border-radius-md);
+  font-family: var(--font-family-monospace);
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+/* Interactive Demo Areas */
+.demo-interaction-area {
+  background-color: var(--bg-secondary);
+  border-radius: var(--border-radius-md);
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Property Controls */
+.demo-control-panel {
+  background-color: var(--bg-light);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.demo-control-panel .form-label {
+  font-weight: var(--font-weight-medium);
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+}
+
+/* Dark Mode Overrides */
+[data-theme="dark"] .demo-header {
+  background: linear-gradient(135deg, #1a1c2c 0%, #2d303e 100%);
+}
+
+[data-theme="dark"] .dev-mode-banner {
+  background-color: rgba(255, 193, 7, 0.15);
+  border-bottom-color: rgba(255, 193, 7, 0.4);
+}
+
+[data-theme="dark"] .demo-nav .list-group-item {
+  background-color: var(--bg-light);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .demo-nav .list-group-item:hover:not(.disabled):not(.active) {
+  background-color: var(--bg-secondary);
+}
+
+[data-theme="dark"] .demo-code {
+  background-color: #1a202c;
+  color: #edf2f7;
+}
+
+[data-theme="dark"] .demo-interaction-area {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .badge.bg-info {
+  background-color: #0dcaf0 !important;
+  color: #000 !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767.98px) {
+  .demo-layout .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .demo-header {
+    padding: 1rem 0;
+  }
+  
+  .demo-interaction-area {
+    padding: 1rem;
+  }
+  
+  .demo-control-panel {
+    padding: 1rem;
+  }
+  
+  .demo-code {
+    font-size: 0.8rem;
+  }
+}
+
+/* Demo Section Dividers */
+.demo-section-divider {
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.demo-section-divider::before,
+.demo-section-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.demo-section-divider::before {
+  margin-right: 1rem;
+}
+
+.demo-section-divider::after {
+  margin-left: 1rem;
+}
+
+.demo-section-divider-text {
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05rem;
+}
+
+/* Example Components Display */
+.component-example {
+  padding: 1.5rem;
+  border: 1px dashed var(--border-color);
+  border-radius: var(--border-radius-md);
+  margin-bottom: 1rem;
+  background-color: var(--bg-light);
+}
+
+.component-example-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  letter-spacing: 0.05rem;
+  font-weight: var(--font-weight-medium);
+}
+
+/* Demo Actions Footer */
+.demo-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+  margin-top: 2rem;
+}
+
+.demo-actions .btn {
+  margin-left: 0.5rem;
+}
+
