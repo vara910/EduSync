@@ -186,8 +186,7 @@ Visual Studio and VS Code debug configurations are included in the `.vs` and `.v
 
 ## Contact Information
 
-- **Project Maintainer**: Varaprasad(mailto:your.varaprasadmudiraj587@gmail.com)
-- **Website**: [edusync.example.com](https://edusync.example.com)
+- **Project Maintainer**: Varaprasad(varaprasadmudiraj587@gmail.com)
 - **GitHub**: [github.com/vara910/EduSync](https://github.com/vara910/EduSync)
 - **Issue Tracker**: [github.com/vara910/EduSync/issues](https://github.com/vara910/EduSync/issues)
 
