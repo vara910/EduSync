@@ -1,6 +1,6 @@
 # EduSync
 
-![EduSync Logo](https://via.placeholder.com/150x50?text=EduSync)
+![EduSync Logo](https://image.pitchbook.com/g3pYaCiekR1gFQE0oWvtyr4ZI6s1607620559028_200x200)
 
 ## Introduction
 
@@ -186,7 +186,7 @@ Visual Studio and VS Code debug configurations are included in the `.vs` and `.v
 
 ## Contact Information
 
-- **Project Maintainer**: [Your Name](mailto:your.email@example.com)
+- **Project Maintainer**: Varaprasad(mailto:your.varaprasadmudiraj587@gmail.com)
 - **Website**: [edusync.example.com](https://edusync.example.com)
 - **GitHub**: [github.com/vara910/EduSync](https://github.com/vara910/EduSync)
 - **Issue Tracker**: [github.com/vara910/EduSync/issues](https://github.com/vara910/EduSync/issues)
